@@ -8,7 +8,7 @@ public interface ProtectionChunk {
     /**
      * Get protectionWorld of chunk
      *
-     * @return ProtectionWorld
+     * @return ProtectionWorlds
      */
     ProtectionWorld getProtectionWorld();
 
