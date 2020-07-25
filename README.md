@@ -34,3 +34,24 @@ dependencies {
 
 You can also download the jar file from here: https://github.com/Angeschossen/ChestProtectAPI/releases
 ```
+
+## Implementing Lands
+Example:
+
+```
+    private final LandsIntegration landsIntegration;
+
+    public IntegrationExample(Plugin yourPlugin) {
+
+        // You should save this instance somewhere.
+        this.landsIntegration = new LandsIntegration(yourPlugin);
+    }
+
+    // Just a test
+    void test(Location location) {
+
+    // Get a land area from a location
+    final Area area = landsIntegration.getAreaByLoc(location);
+    }
+
+```
