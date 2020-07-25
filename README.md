@@ -31,10 +31,9 @@ dependencies {
 }
 ```
 
-
 You can also download the jar file from here: https://github.com/Angeschossen/ChestProtectAPI/releases
-```
 
+```
 ## Implementing ChestProtect
 Example:
 
@@ -52,5 +51,4 @@ Example:
     // Get a land area from a location
     final Protection protection = chestprotect.getProtection(location);
     }
-
 ```
