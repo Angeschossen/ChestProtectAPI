@@ -6,7 +6,7 @@
 
     <groupId>com.github.angeschossen</groupId>
     <artifactId>ChestProtectAPI</artifactId>
-    <version>3.2.5</version>
+    <version>3.2.6</version>
     <name>ChestProtectAPI</name>
 
     <repositories>
@@ -49,28 +49,6 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>3.0.1</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.0.1</version>
-                <configuration>
-                    <show>public</show>
-                    <windowtitle>Lands</windowtitle>
-                    <verbose>false</verbose>
-                    <author>true</author>
-                    <version>true</version>
-                    <linksource>true</linksource>
-                    <notimestamp>true</notimestamp>
-                    <bottom><![CDATA[<b>Angeschossen, 2020</b>]]></bottom>
-                    <reportOutputDirectory>${project.build.directory}</reportOutputDirectory>
-                    <destDir>javadoc-latest</destDir>
                 </configuration>
             </plugin>
         </plugins>

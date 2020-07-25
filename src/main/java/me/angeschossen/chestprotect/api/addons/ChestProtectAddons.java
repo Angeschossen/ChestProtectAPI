@@ -6,11 +6,14 @@ import me.angeschossen.chestprotect.api.objects.ProtectionChunk;
 import me.angeschossen.chestprotect.api.objects.ProtectionWorld;
 import org.bukkit.Chunk;
 import org.bukkit.Location;
+import org.bukkit.block.Block;
 import org.bukkit.plugin.Plugin;
 
 
 public interface ChestProtectAddons {
 
+
+    boolean isProtectable(Block block);
 
     /**
      * Get cached landPlayer

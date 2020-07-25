@@ -7,6 +7,7 @@ import me.angeschossen.chestprotect.api.objects.ProtectionChunk;
 import me.angeschossen.chestprotect.api.objects.ProtectionWorld;
 import org.bukkit.Chunk;
 import org.bukkit.Location;
+import org.bukkit.block.Block;
 import org.bukkit.plugin.Plugin;
 
 
@@ -16,6 +17,10 @@ public class ChestProtectAddon implements ChestProtectAddons {
     public ChestProtectAddon(Plugin plugin, boolean isPublic) {
     }
 
+    @Override
+    public boolean isProtectable(Block block) {
+        return false;
+    }
 
     @Override
     public ProtectPlayer getProtectPlayer(String UUID) {
