@@ -35,23 +35,23 @@ dependencies {
 You can also download the jar file from here: https://github.com/Angeschossen/ChestProtectAPI/releases
 ```
 
-## Implementing Lands
+## Implementing ChestProtect
 Example:
 
 ```
-    private final LandsIntegration landsIntegration;
+    private final ChestProtectAddon chestprotect;
 
     public IntegrationExample(Plugin yourPlugin) {
 
         // You should save this instance somewhere.
-        this.landsIntegration = new LandsIntegration(yourPlugin);
+        this.chestprotect = new ChestProtectAddon(yourPlugin, false);
     }
 
     // Just a test
     void test(Location location) {
 
     // Get a land area from a location
-    final Area area = landsIntegration.getAreaByLoc(location);
+    final Protection protection = chestprotect.getProtection(location);
     }
 
 ```
