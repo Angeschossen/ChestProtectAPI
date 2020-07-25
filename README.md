@@ -1,5 +1,5 @@
 # ChestProtectAPI - Integrate ChestProtect into your Plugin
-[![](https://jitpack.io/v/Angeschossen/ChestProtect.svg)](https://jitpack.io/#Angeschossen/ChestProtect)
+[![](https://jitpack.io/v/Angeschossen/ChestProtectAPI.svg)](https://jitpack.io/#Angeschossen/ChestProtectAPI)
 
 
 How to include the API with Maven: 
