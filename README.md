@@ -38,7 +38,6 @@ You can also download the jar file from here: https://github.com/Angeschossen/Ch
 ## Implementing ChestProtect
 Example:
 
-```
     private final ChestProtectAddon chestprotect;
 
     public IntegrationExample(Plugin yourPlugin) {
