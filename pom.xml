@@ -6,7 +6,7 @@
 
     <groupId>com.github.angeschossen</groupId>
     <artifactId>ChestProtectAPI</artifactId>
-    <version>3.2.7</version>
+    <version>3.3.1</version>
     <name>ChestProtectAPI</name>
 
     <repositories>
