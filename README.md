@@ -15,7 +15,7 @@ How to include the API with Maven:
     <dependency>
         <groupId>com.github.angeschossen</groupId>
         <artifactId>ChestProtectAPI</artifactId>
-        <version>3.2.4</version>
+        <version>3.3.1</version>
         <scope>provided</scope>
     </dependency>
 </dependencies>
@@ -27,7 +27,7 @@ repositories {
 	maven { url 'https://jitpack.io' }
 }
 dependencies {
-    compileOnly "com.github.angeschossen:ChestProtectAPI:3.2.4"
+    compileOnly "com.github.angeschossen:ChestProtectAPI:3.3.1"
 }
 ```
 
@@ -42,13 +42,13 @@ Example:
     public IntegrationExample(Plugin yourPlugin) {
 
         // You should save this instance somewhere.
-        this.chestprotect = new ChestProtectAddon(yourPlugin, false);
+        this.chestprotect = new ChestProtectAddon(yourPlugin);
     }
 
     // Just a test
     void test(Location location) {
 
     // Get a land area from a location
-    final Protection protection = chestprotect.getProtection(location);
+    final BlockProtection protection = chestprotect.getProtection(location);
     }
 ```
