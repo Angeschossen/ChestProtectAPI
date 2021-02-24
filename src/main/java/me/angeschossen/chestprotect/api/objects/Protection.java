@@ -1,18 +1,14 @@
 package me.angeschossen.chestprotect.api.objects;
 
-import me.angeschossen.chestprotect.api.enums.ProtectAction;
-import me.angeschossen.chestprotect.api.enums.ProtectRole;
+import me.angeschossen.chestprotect.api.enums.ProtectionSetting;
 import me.angeschossen.chestprotect.api.enums.Type;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-import java.util.Collection;
 import java.util.UUID;
 
 public interface Protection {
-
-    boolean canAction(UUID playerUUID, ProtectAction action);
-
-    Collection<UUID> getRoleMembers(ProtectRole protectRole);
 
     int getX();
 
@@ -20,33 +16,22 @@ public interface Protection {
 
     int getZ();
 
-    UUID getOwnerUUID();
-
-    void trustPlayer(UUID playerUUID);
-
-    ProtectRole getRole(UUID playerUUID);
-
-    void untrustPlayer(UUID playerUUID);
-
-    Collection<UUID> getTrustedPlayers();
-
-    void setRole(UUID memberUUID, ProtectRole protectRole);
-
-    boolean isTrusted(UUID playerUUID);
-
-    Collection<String> getActiveSettings();
-
-    boolean load(boolean initial);
-
-    void unload();
-
     Type type();
 
-    void delete(boolean save, Player player);
+    boolean isTrusted(UUID playerUID);
 
-    void save(boolean force);
+    UUID getOwner();
 
-    boolean getSetting(String iD);
+    /**
+     * Delete the protection.
+     * @param deleter Player that deletes the protection, will receive a unlock message.
+     * @throws IllegalStateException If the owner of the protection is not online. The owner needs to be online to receive the cashback.
+     */
+    void delete(@Nullable Player deleter) throws IllegalStateException;
 
-    boolean toggleSetting(String iD);
+    boolean hasSetting(@NotNull ProtectionSetting setting);
+
+    void enableSetting(@NotNull ProtectionSetting setting);
+
+    boolean toggleSetting(@NotNull ProtectionSetting setting);
 }

@@ -7,8 +7,6 @@ import org.bukkit.Material;
 
 public interface BlockProtection extends Protection{
 
-    ProtectionChunk getProtectionChunk();
-
     Material getType();
 
     Location getLocation();
