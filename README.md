@@ -33,13 +33,12 @@ dependencies {
 
 You can also download the jar file from here: https://github.com/Angeschossen/ChestProtectAPI/releases
 
-```
 ## Accessing the ChestProtect API
-Example:
+```
     // just a test
     void test(Location location) {
-    ProtectionWorld world = ChestProtectAPI.getInstance().getWorld(location.getWorld);
-    if (world != null) {
-        BlockProtection protection = world.getProtectionByLocation(location);
-    }
+        ProtectionWorld world = ChestProtectAPI.getInstance().getWorld(location.getWorld);
+        if (world != null) {
+            BlockProtection protection = world.getProtectionByLocation(location);
+        }
 ```
