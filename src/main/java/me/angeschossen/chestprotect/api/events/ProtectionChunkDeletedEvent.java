@@ -1,6 +1,7 @@
 package me.angeschossen.chestprotect.api.events;
 
-import me.angeschossen.chestprotect.api.objects.ProtectionChunk;
+import me.angeschossen.chestprotect.api.protection.world.ProtectionChunk;
+import org.bukkit.Bukkit;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
@@ -10,15 +11,17 @@ public class ProtectionChunkDeletedEvent extends Event {
     private ProtectionChunk protectionChunk;
 
     public ProtectionChunkDeletedEvent(ProtectionChunk protectionChunk) {
-        this.protectionChunk = protectionChunk;
-    }
+        super(!Bukkit.isPrimaryThread());
 
-    public ProtectionChunk getProtectionChunk(){
-        return protectionChunk;
+        this.protectionChunk = protectionChunk;
     }
 
     public static HandlerList getHandlerList() {
         return handlerList;
+    }
+
+    public ProtectionChunk getProtectionChunk() {
+        return protectionChunk;
     }
 
     @Override

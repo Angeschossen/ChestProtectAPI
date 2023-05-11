@@ -1,9 +1,10 @@
-package me.angeschossen.chestprotect.api.objects;
+package me.angeschossen.chestprotect.api.protection.world;
 
+
+import me.angeschossen.chestprotect.api.protection.block.BlockProtection;
+import org.jetbrains.annotations.Nullable;
 
 public interface ProtectionChunk {
-
-    void delete();
 
     /**
      * Get protectionWorld of chunk
@@ -34,12 +35,6 @@ public interface ProtectionChunk {
      * @param z Z block coordinate
      * @return BlockProtection or null, if none found.
      */
+    @Nullable
     BlockProtection getProtection(int x, int y, int z);
-
-    /**
-     * Check if chunk has any protections in it
-     *
-     * @return Boolean
-     */
-    boolean isEmpty();
 }

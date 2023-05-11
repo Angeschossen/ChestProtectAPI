@@ -1,10 +1,8 @@
-package me.angeschossen.chestprotect.api.objects;
+package me.angeschossen.chestprotect.api.protection.world;
 
 import org.bukkit.World;
 
 public interface ChunkCoordinate {
-    String getWorldName();
-
     int getX();
 
     int getZ();

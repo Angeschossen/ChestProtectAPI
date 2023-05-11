@@ -1,4 +1,4 @@
-package me.angeschossen.chestprotect.api.objects;
+package me.angeschossen.chestprotect.api.player;
 
 import org.bukkit.entity.Player;
 
@@ -10,6 +10,4 @@ public interface ProtectPlayer {
     Player getPlayer();
 
     UUID getUID();
-
-    int getSize();
 }

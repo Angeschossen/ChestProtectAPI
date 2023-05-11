@@ -1,19 +1,24 @@
 package me.angeschossen.chestprotect.api.addons;
 
 
-import me.angeschossen.chestprotect.api.objects.BlockProtection;
-import me.angeschossen.chestprotect.api.objects.ProtectPlayer;
-import me.angeschossen.chestprotect.api.objects.ProtectionChunk;
-import me.angeschossen.chestprotect.api.objects.ProtectionWorld;
+import me.angeschossen.chestprotect.api.player.ProtectPlayer;
+import me.angeschossen.chestprotect.api.protection.block.BlockProtection;
+import me.angeschossen.chestprotect.api.protection.world.ProtectionChunk;
+import me.angeschossen.chestprotect.api.protection.world.ProtectionWorld;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Objects;
 import java.util.UUID;
 
 
+/**
+ * Use {@link me.angeschossen.chestprotect.api.ChestProtectAPI} instead.
+ */
+@Deprecated
 public class ChestProtectAddon implements ChestProtectAddons {
 
 
@@ -26,19 +31,12 @@ public class ChestProtectAddon implements ChestProtectAddons {
     }
 
     @Override
-    @NotNull
-    public String getName() {
-        return null;
-    }
-
-
-    @Override
-    public ProtectPlayer getProtectPlayer(UUID playerUUID) {
+    public @NotNull String getName() {
         return null;
     }
 
     @Override
-    public ProtectionChunk getProtectionChunk(@NotNull World world, int x, int z) {
+    public ProtectPlayer getProtectPlayer(UUID UUID) {
         return null;
     }
 
@@ -48,12 +46,7 @@ public class ChestProtectAddon implements ChestProtectAddons {
     }
 
     @Override
-    public ProtectionWorld getProtectionWorld(String worldName) {
-        return null;
-    }
-
-    @Override
-    public ProtectionChunk getProtectionChunk(String worldName, int x, int z) {
+    public ProtectionChunk getProtectionChunk(@NotNull World world, int x, int z) {
         return null;
     }
 
@@ -63,41 +56,36 @@ public class ChestProtectAddon implements ChestProtectAddons {
     }
 
     @Override
-    public boolean isProtectable(Block block) {
-        return false;
-    }
-
-    @Override
     public Plugin getPlugin() {
         return null;
     }
 
     @Override
-    @Deprecated
     public void disable(String hookKey) {
 
     }
 
-    @Deprecated
     @Override
     public String initialize() {
         return null;
     }
 
     @Override
-    @Deprecated
+    public boolean isProtectable(Block block) {
+        return false;
+    }
+
+    @Override
     public boolean isEnabled() {
         return false;
     }
 
     @Override
-    @Deprecated
     public boolean getAccess(String hookKey) {
         return false;
     }
 
     @Override
-    @Deprecated
     public boolean isPublic() {
         return false;
     }

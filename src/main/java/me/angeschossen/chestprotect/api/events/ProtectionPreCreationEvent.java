@@ -1,5 +1,6 @@
 package me.angeschossen.chestprotect.api.events;
 
+import me.angeschossen.chestprotect.api.protection.enums.Type;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
@@ -11,11 +12,13 @@ public class ProtectionPreCreationEvent extends Event implements Cancellable {
 
     private final Location location;
     private final Player player;
+    private final Type protectionType;
     private boolean cancelled = false;
 
-    public ProtectionPreCreationEvent(Location location, Player player) {
+    public ProtectionPreCreationEvent(Location location, Player player, Type protectionType) {
         this.location = location;
         this.player = player;
+        this.protectionType = protectionType;
     }
 
     public Player getPlayer() {
@@ -24,6 +27,10 @@ public class ProtectionPreCreationEvent extends Event implements Cancellable {
 
     public Location getLocation() {
         return location;
+    }
+
+    public Type getProtectionType() {
+        return protectionType;
     }
 
     public static HandlerList getHandlerList() {

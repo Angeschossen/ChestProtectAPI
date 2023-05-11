@@ -1,9 +1,9 @@
 package me.angeschossen.chestprotect.api.addons;
 
-import me.angeschossen.chestprotect.api.objects.BlockProtection;
-import me.angeschossen.chestprotect.api.objects.ProtectPlayer;
-import me.angeschossen.chestprotect.api.objects.ProtectionChunk;
-import me.angeschossen.chestprotect.api.objects.ProtectionWorld;
+import me.angeschossen.chestprotect.api.player.ProtectPlayer;
+import me.angeschossen.chestprotect.api.protection.block.BlockProtection;
+import me.angeschossen.chestprotect.api.protection.world.ProtectionChunk;
+import me.angeschossen.chestprotect.api.protection.world.ProtectionWorld;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.block.Block;
@@ -13,6 +13,10 @@ import org.jetbrains.annotations.NotNull;
 import java.util.UUID;
 
 
+/**
+ * Use {@link me.angeschossen.chestprotect.api.ChestProtectAPI} instead.
+ */
+@Deprecated
 public interface ChestProtectAddons {
 
 
@@ -27,21 +31,9 @@ public interface ChestProtectAddons {
      */
     ProtectPlayer getProtectPlayer(UUID UUID);
 
-    ProtectionChunk getProtectionChunk(@NotNull World world, int x, int z);
-
     ProtectionWorld getProtectionWorld(@NotNull World world);
 
-    /**
-     * Get cached landChunk
-     *
-     * @param worldName World
-     * @param x         X chunk
-     * @param z         Z chunk
-     * @return Chunk or null, if not cached
-     * @since 2.5.7
-     */
-    @Deprecated
-    ProtectionChunk getProtectionChunk(String worldName, int x, int z);
+    ProtectionChunk getProtectionChunk(@NotNull World world, int x, int z);
 
     /**
      * Get protection.
@@ -50,15 +42,6 @@ public interface ChestProtectAddons {
      * @return BlockProtection or null, if not loaded
      */
     BlockProtection getProtection(Location location);
-
-    /**
-     * Get world.
-     *
-     * @param worldName Name of world.
-     * @return LandWorld or null, if it's not an landWorld.
-     */
-    @Deprecated
-    ProtectionWorld getProtectionWorld(String worldName);
 
     /**
      * Get's plugin wich hooks ChestProtect.

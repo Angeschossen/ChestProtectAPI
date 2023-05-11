@@ -1,6 +1,6 @@
 package me.angeschossen.chestprotect.api.events;
 
-import me.angeschossen.chestprotect.api.objects.BlockProtection;
+import me.angeschossen.chestprotect.api.protection.block.BlockProtection;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
@@ -47,4 +47,9 @@ public class PlayerOpenProtectionEvent extends Event implements Cancellable {
         return handlerList;
     }
 
+
+    @Override
+    public String toString() {
+        return "PlayerOpenProtectionEvent{player=" + player.getName() + ",protection=" + getBlockProtection().toString() + '}';
+    }
 }
