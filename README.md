@@ -34,21 +34,12 @@ dependencies {
 You can also download the jar file from here: https://github.com/Angeschossen/ChestProtectAPI/releases
 
 ```
-## Implementing ChestProtect
+## Accessing the ChestProtect API
 Example:
-
-    private final ChestProtectAddon chestprotect;
-
-    public IntegrationExample(Plugin yourPlugin) {
-
-        // You should save this instance somewhere.
-        this.chestprotect = new ChestProtectAddon(yourPlugin);
-    }
-
-    // Just a test
+    // just a test
     void test(Location location) {
-
-    // Get a land area from a location
-    final BlockProtection protection = chestprotect.getProtection(location);
+    ProtectionWorld world = ChestProtectAPI.getInstance().getWorld(location.getWorld);
+    if (world != null) {
+        BlockProtection protection = world.getProtectionByLocation(location);
     }
 ```
