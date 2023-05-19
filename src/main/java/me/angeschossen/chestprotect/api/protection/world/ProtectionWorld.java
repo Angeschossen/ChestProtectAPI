@@ -1,7 +1,6 @@
 package me.angeschossen.chestprotect.api.protection.world;
 
 import me.angeschossen.chestprotect.api.protection.block.BlockProtection;
-import org.bukkit.Location;
 import org.bukkit.World;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -25,14 +24,6 @@ public interface ProtectionWorld {
     ProtectionChunk getBlockProtectionsByChunk(int chunkX, int chunkZ);
 
     /**
-     * Get protection by location.
-     * @param location The location
-     * @return null, if it doesn't exist or chunk isn't loaded
-     */
-    @Nullable
-    BlockProtection getProtectionByLocation(@NotNull Location location);
-
-    /**
      * Get protection by its coordinates.
      * @param x X block coordinate
      * @param y Y block coordinate
@@ -40,5 +31,5 @@ public interface ProtectionWorld {
      * @return null, if it doesn't exist or chunk isn't loaded
      */
     @Nullable
-    BlockProtection getProtection(int x, int y, int z);
+    BlockProtection getBlockProtection(int x, int y, int z);
 }
