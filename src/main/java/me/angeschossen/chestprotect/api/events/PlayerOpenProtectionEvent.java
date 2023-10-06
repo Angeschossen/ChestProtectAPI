@@ -1,30 +1,53 @@
 package me.angeschossen.chestprotect.api.events;
 
+import com.github.angeschossen.pluginframework.api.utils.Checks;
+import me.angeschossen.chestprotect.api.player.ProtectPlayer;
 import me.angeschossen.chestprotect.api.protection.block.BlockProtection;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
+import org.jetbrains.annotations.NotNull;
 
+/**
+ * Called whenever a player opens a protection. For example a door, chest and so on.
+ */
 public class PlayerOpenProtectionEvent extends Event implements Cancellable {
 
-    private final Player player;
-    private final BlockProtection blockProtection;
+    private final @NotNull ProtectPlayer player;
+    private final @NotNull BlockProtection blockProtection;
 
     public static HandlerList handlerList = new HandlerList();
     private boolean cancelled = false;
 
+    /**
+     * Create an instance of this event.
+     * @param player the player that opens the protection
+     * @param blockProtection the protection that is being opened
+     */
+    public PlayerOpenProtectionEvent(@NotNull ProtectPlayer player, @NotNull BlockProtection blockProtection) {
+        Checks.requireNonNull(player, "player");
+        Checks.requireNonNull(blockProtection, "blockProtection");
 
-    public PlayerOpenProtectionEvent(Player player, BlockProtection blockProtection) {
         this.player = player;
         this.blockProtection = blockProtection;
     }
 
-    public Player getPlayer() {
+    /**
+     * Get the player.
+     * @return player that opens the protection
+     */
+    @NotNull
+    public ProtectPlayer getPlayer() {
         return player;
     }
 
-    public BlockProtection getBlockProtection() {
+    /**
+     * Get the protection.
+     * @return protection that is being opened
+     */
+    @NotNull
+    public BlockProtection getProtection() {
         return blockProtection;
     }
 
@@ -33,7 +56,8 @@ public class PlayerOpenProtectionEvent extends Event implements Cancellable {
         return cancelled;
     }
 
-    @Override @Deprecated
+    @Override
+    @Deprecated
     public void setCancelled(boolean b) {
         cancelled = b;
     }
@@ -45,11 +69,5 @@ public class PlayerOpenProtectionEvent extends Event implements Cancellable {
 
     public static HandlerList getHandlerList() {
         return handlerList;
-    }
-
-
-    @Override
-    public String toString() {
-        return "PlayerOpenProtectionEvent{player=" + player.getName() + ",protection=" + getBlockProtection().toString() + '}';
     }
 }

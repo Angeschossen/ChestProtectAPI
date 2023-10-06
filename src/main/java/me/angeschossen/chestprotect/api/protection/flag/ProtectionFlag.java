@@ -5,10 +5,14 @@ import me.angeschossen.chestprotect.api.protection.block.BlockProtection;
 import me.angeschossen.chestprotect.api.protection.entity.EntityProtection;
 import org.bukkit.Material;
 import org.bukkit.Tag;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Flags used to restrict more general and world related events.
+ */
 public enum ProtectionFlag {
     REDSTONE(0, true),
     PUBLIC_TAKE(1, false),
@@ -31,21 +35,23 @@ public enum ProtectionFlag {
         this.defState = defState;
     }
 
+    /**
+     * Get a flag by its numerical id.
+     *
+     * @param id the numerical id
+     * @return null, if no flag belongs to this id
+     */
+    @Nullable
     public static ProtectionFlag getById(int id) throws IllegalArgumentException {
         return map.get(id);
     }
 
+    /**
+     * Get the numerical id.
+     *
+     * @return numerical id.
+     */
     public int getId() {
         return id;
-    }
-
-    public boolean shouldAddToMenu(Protection protection) {
-        if (protection instanceof EntityProtection) {
-            return false;
-        }
-
-        BlockProtection blockProtection = (BlockProtection) protection;
-        Material material = blockProtection.getType();
-        return Tag.DOORS.isTagged(material) || Tag.TRAPDOORS.isTagged(material);
     }
 }

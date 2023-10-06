@@ -3,9 +3,28 @@ package me.angeschossen.chestprotect.api.player.flag;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Used to customize a players experience.
+ */
 public enum PlayerFlag {
 
-    PERSISTENT_LOCK(0), PERSISTENT_TRUST(1), AUTO_LOCK(2), NOTIFICATIONS(3);
+    /**
+     * Dont disable lock mode until "/cp lock" or "/cp exit" is executed again.
+     */
+    PERSISTENT_LOCK(0),
+    /**
+     * Dont disable trust mode until "/cp lock" or "/cp exit" is executed again.
+     */
+    PERSISTENT_TRUST(1),
+    /**
+     * Automatically lock blocks upon placement.
+     */
+    AUTO_LOCK(2),
+    /**
+     * Get information about a protection when interacting with it.
+     */
+    NOTIFICATIONS(3);
+
     private static final Map<Integer, PlayerFlag> map = new HashMap<>();
 
     static {
@@ -20,6 +39,11 @@ public enum PlayerFlag {
         this.id = id;
     }
 
+    /**
+     * Get a flag by its numerical id.
+     * @param id the numerical id
+     * @return
+     */
     public static PlayerFlag getById(int id) {
         return map.get(id);
     }

@@ -1,1 +1,3 @@
 /build
+/src/main/java/me/angeschossen/chestprotect/api/exceptions/IllegalUntrustException.java
+/src/main/java/me/angeschossen/chestprotect/api/exceptions/NameAlreadyTakenException.java

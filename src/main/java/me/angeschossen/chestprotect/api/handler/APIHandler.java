@@ -5,6 +5,9 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
+/**
+ * This class is not intended for direct usage and might change at any time.
+ */
 public class APIHandler {
 
     private static APIHandler instance;
