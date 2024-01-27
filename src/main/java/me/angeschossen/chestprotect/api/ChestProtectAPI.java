@@ -1,6 +1,7 @@
 package me.angeschossen.chestprotect.api;
 
 import me.angeschossen.chestprotect.api.handler.APIHandler;
+import me.angeschossen.chestprotect.api.player.ProtectOfflinePlayer;
 import me.angeschossen.chestprotect.api.player.ProtectPlayer;
 import me.angeschossen.chestprotect.api.protection.ProtectionManager;
 import me.angeschossen.chestprotect.api.protection.entity.EntityProtection;
@@ -12,6 +13,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Objects;
+import java.util.UUID;
+import java.util.concurrent.CompletableFuture;
 
 public interface ChestProtectAPI {
 
@@ -20,18 +23,28 @@ public interface ChestProtectAPI {
      *
      * @return API implementation
      */
+    @NotNull
     static ChestProtectAPI getInstance() {
         return Objects.requireNonNull(APIHandler.getInstance(), "ChestProtect isn't loaded yet. Please access the API, after ChestProtect is loaded. It doesn't need to be fully enabled.").getAPI();
     }
 
     /**
+     * Get information about an offline player. For online players, use {@link #getProtectPlayer(Player)} instead.
+     *
+     * @param uuid the player's uuid
+     * @return never null
+     */
+    @NotNull CompletableFuture<? extends ProtectOfflinePlayer> getProtectOfflinePlayer(@NotNull UUID uuid);
+
+    /**
      * Get protection manager.
+     *
      * @return Initialized protection manager
      */
     @NotNull ProtectionManager getProtectionManager();
 
     /**
-     * Get online player.
+     * Get online player. For offline players use {@link #getProtectOfflinePlayer(UUID)} instead.
      *
      * @param player The player
      * @return null, if not online and already unloaded.
@@ -48,6 +61,7 @@ public interface ChestProtectAPI {
 
     /**
      * Get entity protection.
+     *
      * @param entity The entity
      * @return null, if not protected
      */
