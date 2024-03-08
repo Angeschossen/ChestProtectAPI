@@ -28,6 +28,10 @@ public class APIHandler {
         return instance;
     }
 
+    public Factory getFactory() {
+        return factory;
+    }
+
     public static void init(@NotNull ChestProtectAPI api, @NotNull Factory factory) {
         Objects.requireNonNull(api);
         if (instance != null) {
