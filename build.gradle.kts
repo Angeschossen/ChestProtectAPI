@@ -62,7 +62,7 @@ dependencies {
 }
 
 group = "com.github.angeschossen"
-version = "5.16.0"
+version = "5.16.1"
 description = "ChestProtectAPI"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 

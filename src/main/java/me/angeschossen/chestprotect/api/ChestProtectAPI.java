@@ -4,9 +4,11 @@ import me.angeschossen.chestprotect.api.handler.APIHandler;
 import me.angeschossen.chestprotect.api.player.ProtectOfflinePlayer;
 import me.angeschossen.chestprotect.api.player.ProtectPlayer;
 import me.angeschossen.chestprotect.api.protection.ProtectionManager;
+import me.angeschossen.chestprotect.api.protection.block.BlockProtection;
 import me.angeschossen.chestprotect.api.protection.entity.EntityProtection;
 import me.angeschossen.chestprotect.api.protection.world.ProtectionWorld;
 import org.bukkit.World;
+import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
@@ -66,4 +68,12 @@ public interface ChestProtectAPI {
      * @return null, if not protected
      */
     @Nullable EntityProtection getEntityProtection(@NotNull Entity entity);
+
+    /**
+     * Get block protection.
+     *
+     * @param block the block
+     * @return null, if not protected or chunk unloaded
+     */
+    @Nullable BlockProtection getBlockProtection(@NotNull Block block);
 }
