@@ -12,26 +12,28 @@ public class APIHandler {
 
     private static APIHandler instance;
     private final ChestProtectAPI api;
+    private final Factory factory;
 
     @NotNull
     public ChestProtectAPI getAPI() {
         return api;
     }
 
-    private APIHandler(@NotNull ChestProtectAPI api) {
+    private APIHandler(@NotNull ChestProtectAPI api, Factory factory) {
         this.api = api;
+        this.factory = factory;
     }
 
     public static APIHandler getInstance() {
         return instance;
     }
 
-    public static void init(@NotNull ChestProtectAPI api) {
+    public static void init(@NotNull ChestProtectAPI api, @NotNull Factory factory) {
         Objects.requireNonNull(api);
         if (instance != null) {
             throw new IllegalStateException("Already initialized.");
         }
 
-        instance = new APIHandler(api);
+        instance = new APIHandler(api, factory);
     }
 }

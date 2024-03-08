@@ -1,17 +1,21 @@
 package me.angeschossen.chestprotect.api.protection;
 
+import com.github.angeschossen.pluginframework.api.trusted.RoleHolder;
 import com.github.angeschossen.pluginframework.api.trusted.group.Group;
 import me.angeschossen.chestprotect.api.exceptions.TrustedThroughGroupException;
 import me.angeschossen.chestprotect.api.player.ProtectPlayer;
 import me.angeschossen.chestprotect.api.protection.enums.Type;
 import me.angeschossen.chestprotect.api.protection.flag.ProtectionFlag;
+import me.angeschossen.chestprotect.api.protection.hook.ProtectionHook;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
 import java.util.UUID;
 
-public interface Protection extends Nameable, MemberHolder {
+public interface Protection extends Nameable, RoleHolder {
+
+    void setProtectionHook(@Nullable ProtectionHook protectionHook);
 
     /**
      * Get the block x coordinate.
@@ -49,6 +53,15 @@ public interface Protection extends Nameable, MemberHolder {
      */
     @Nullable Group getGroup();
 
+
+    /**
+     * Open the protection menu for a player.
+     * This doesn't check for any permissions of flags.
+     *
+     * @param player the player which should open the protection menu
+     */
+    void openMenu(@NotNull ProtectPlayer player);
+
     /**
      * Delete the protection
      *
@@ -85,7 +98,7 @@ public interface Protection extends Nameable, MemberHolder {
      * Untrust a player that is trusted directly to this protection.
      *
      * @param playerUUID The player to untrust
-     * @throws TrustedThroughGroupException If the player is trusted through the group {@link Group} and not directly.
+     * @throw TrustedThroughGroupException if player is trusted through group
      */
-    void untrustPlayer(@NotNull UUID playerUUID) throws TrustedThroughGroupException;
+    boolean untrustPlayer(@NotNull UUID playerUUID);
 }
