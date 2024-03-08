@@ -56,13 +56,13 @@ tasks {
 
 }
 dependencies {
-    shadow(libs.pluginframeworkapi)
+    shadow("com.github.angeschossen:PluginFrameworkAPI:1.0.9")
     compileOnly("org.spigotmc:spigot-api:1.19.3-R0.1-SNAPSHOT")
     compileOnly("org.realityforge.org.jetbrains.annotations:org.jetbrains.annotations:1.7.0")
 }
 
 group = "com.github.angeschossen"
-version = "5.16.1"
+version = "5.16.2"
 description = "ChestProtectAPI"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
