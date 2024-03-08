@@ -1,5 +1,6 @@
 package me.angeschossen.chestprotect.api;
 
+import com.github.angeschossen.pluginframework.api.blockutil.BlockPosition;
 import me.angeschossen.chestprotect.api.handler.APIHandler;
 import me.angeschossen.chestprotect.api.player.ProtectOfflinePlayer;
 import me.angeschossen.chestprotect.api.player.ProtectPlayer;
@@ -7,6 +8,7 @@ import me.angeschossen.chestprotect.api.protection.ProtectionManager;
 import me.angeschossen.chestprotect.api.protection.block.BlockProtection;
 import me.angeschossen.chestprotect.api.protection.entity.EntityProtection;
 import me.angeschossen.chestprotect.api.protection.world.ProtectionWorld;
+import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
@@ -75,5 +77,13 @@ public interface ChestProtectAPI {
      * @param block the block
      * @return null, if not protected or chunk unloaded
      */
-    @Nullable BlockProtection getBlockProtection(@NotNull Block block);
+    @Nullable BlockProtection getBlockProtectionByBlock(@NotNull Block block);
+
+    /**
+     * Get block protection.
+     *
+     * @param position position of the block
+     * @return null, if not protected or chunk unloaded
+     */
+    @Nullable BlockProtection getBlockProtectionByPos(@NotNull BlockPosition position);
 }
