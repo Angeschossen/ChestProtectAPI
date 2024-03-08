@@ -4,7 +4,6 @@ import com.github.angeschossen.pluginframework.api.utils.Checks;
 import me.angeschossen.chestprotect.api.player.ProtectPlayer;
 import me.angeschossen.chestprotect.api.protection.enums.Type;
 import org.bukkit.Location;
-import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;

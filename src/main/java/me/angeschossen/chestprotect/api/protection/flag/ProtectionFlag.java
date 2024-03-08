@@ -1,10 +1,5 @@
 package me.angeschossen.chestprotect.api.protection.flag;
 
-import me.angeschossen.chestprotect.api.protection.Protection;
-import me.angeschossen.chestprotect.api.protection.block.BlockProtection;
-import me.angeschossen.chestprotect.api.protection.entity.EntityProtection;
-import org.bukkit.Material;
-import org.bukkit.Tag;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;

@@ -3,7 +3,6 @@ package me.angeschossen.chestprotect.api.events;
 import com.github.angeschossen.pluginframework.api.utils.Checks;
 import me.angeschossen.chestprotect.api.player.ProtectPlayer;
 import me.angeschossen.chestprotect.api.protection.block.BlockProtection;
-import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;

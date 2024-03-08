@@ -14,7 +14,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 
-import java.lang.invoke.SwitchPoint;
 import java.util.Objects;
 import java.util.UUID;
 

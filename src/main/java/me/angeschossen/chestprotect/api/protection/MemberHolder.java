@@ -1,7 +1,5 @@
 package me.angeschossen.chestprotect.api.protection;
 
-import me.angeschossen.chestprotect.api.exceptions.TrustedThroughGroupException;
-import me.angeschossen.chestprotect.api.protection.group.Group;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
