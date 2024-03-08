@@ -1,8 +1,8 @@
 package me.angeschossen.chestprotect.api.player;
 
+import com.github.angeschossen.pluginframework.api.trusted.group.Group;
 import me.angeschossen.chestprotect.api.player.flag.PlayerFlag;
 import me.angeschossen.chestprotect.api.protection.block.BlockProtectionInfo;
-import me.angeschossen.chestprotect.api.protection.group.Group;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
