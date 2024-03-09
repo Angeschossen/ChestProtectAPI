@@ -1,5 +1,6 @@
 package me.angeschossen.chestprotect.api.player;
 
+import com.github.angeschossen.pluginframework.api.player.PlayerData;
 import com.github.angeschossen.pluginframework.api.trusted.group.Group;
 import me.angeschossen.chestprotect.api.player.flag.PlayerFlag;
 import me.angeschossen.chestprotect.api.protection.block.BlockProtectionInfo;
@@ -10,7 +11,7 @@ import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
-public interface ProtectOfflinePlayer {
+public interface ProtectOfflinePlayer extends PlayerData {
     /**
      * Get the player's identification
      *
