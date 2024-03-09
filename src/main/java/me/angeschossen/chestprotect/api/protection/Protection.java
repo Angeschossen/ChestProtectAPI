@@ -17,6 +17,8 @@ public interface Protection extends Nameable, RoleHolder {
 
     void setProtectionHook(@NotNull ProtectionHook protectionHook);
 
+    void removeProtectionHook();
+
     /**
      * Get the block x coordinate.
      *
