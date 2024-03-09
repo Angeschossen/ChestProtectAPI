@@ -60,6 +60,8 @@ public interface Protection extends Nameable, RoleHolder {
      *
      * @param deleter The player that deletes the protection, will receive an unlock message.
      */
+    void delete(@Nullable ProtectPlayer deleter, boolean msg) throws IllegalStateException;
+
     void delete(@Nullable ProtectPlayer deleter) throws IllegalStateException;
 
     /**
