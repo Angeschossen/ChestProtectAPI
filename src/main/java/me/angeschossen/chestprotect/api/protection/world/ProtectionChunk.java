@@ -5,6 +5,8 @@ import me.angeschossen.chestprotect.api.protection.block.BlockProtection;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Collection;
+
 public interface ProtectionChunk {
 
     /**
@@ -39,4 +41,6 @@ public interface ProtectionChunk {
      */
     @Nullable
     BlockProtection getProtection(int x, int y, int z);
+
+    Collection<? extends BlockProtection> getBlockProtections();
 }

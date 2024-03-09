@@ -5,17 +5,23 @@ import org.bukkit.World;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Collection;
+
 public interface ProtectionWorld {
 
     /**
      * Get the bukkit world.
+     *
      * @return Bukkit world
      */
     @NotNull
     World getBukkitWorld();
 
+    Collection<? extends ProtectionChunk> getLoadedChunks();
+
     /**
      * Get all block protection that are located in a specific chunk.
+     *
      * @param chunkX X identifier of chunk
      * @param chunkZ Z identifier of chunk
      * @return Chunk with protections in it or null if not loaded or doesn't exist
@@ -25,6 +31,7 @@ public interface ProtectionWorld {
 
     /**
      * Get protection by its coordinates.
+     *
      * @param x X block coordinate
      * @param y Y block coordinate
      * @param z Z block coordinate
