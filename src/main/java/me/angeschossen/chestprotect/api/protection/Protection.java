@@ -15,9 +15,7 @@ import java.util.UUID;
 
 public interface Protection extends Nameable, RoleHolder {
 
-    void addProtectionHook(@NotNull ProtectionHook protectionHook);
-
-    void removeProtectionHook(@NotNull ProtectionHook protectionHook);
+    void setProtectionHook(@NotNull ProtectionHook protectionHook);
 
     /**
      * Get the block x coordinate.
