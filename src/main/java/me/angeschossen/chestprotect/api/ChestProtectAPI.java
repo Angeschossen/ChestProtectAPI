@@ -8,7 +8,6 @@ import me.angeschossen.chestprotect.api.protection.ProtectionManager;
 import me.angeschossen.chestprotect.api.protection.block.BlockProtection;
 import me.angeschossen.chestprotect.api.protection.entity.EntityProtection;
 import me.angeschossen.chestprotect.api.protection.world.ProtectionWorld;
-import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
@@ -16,6 +15,7 @@ import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Collection;
 import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
@@ -31,6 +31,9 @@ public interface ChestProtectAPI {
     static ChestProtectAPI getInstance() {
         return Objects.requireNonNull(APIHandler.getInstance(), "ChestProtect isn't loaded yet. Please access the API, after ChestProtect is loaded. It doesn't need to be fully enabled.").getAPI();
     }
+
+    @NotNull
+    Collection<? extends ProtectionWorld> getProtectionWorlds();
 
     /**
      * Get information about an offline player. For online players, use {@link #getProtectPlayer(Player)} instead.

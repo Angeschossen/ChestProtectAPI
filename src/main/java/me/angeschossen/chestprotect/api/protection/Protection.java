@@ -55,15 +55,6 @@ public interface Protection extends Nameable, RoleHolder {
      */
     @Nullable Group getGroup();
 
-
-    /**
-     * Open the protection menu for a player.
-     * This doesn't check for any permissions of flags.
-     *
-     * @param player the player which should open the protection menu
-     */
-    void openMenu(@NotNull ProtectPlayer player);
-
     /**
      * Delete the protection
      *
