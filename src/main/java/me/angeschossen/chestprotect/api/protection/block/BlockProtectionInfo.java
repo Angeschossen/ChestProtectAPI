@@ -1,11 +1,12 @@
 package me.angeschossen.chestprotect.api.protection.block;
 
 import me.angeschossen.chestprotect.api.protection.Nameable;
+import me.angeschossen.chestprotect.api.protection.hook.ProtectionHookHolder;
 import me.angeschossen.chestprotect.api.protection.world.ProtectionWorld;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
-public interface BlockProtectionInfo extends Nameable {
+public interface BlockProtectionInfo extends Nameable, ProtectionHookHolder {
     /**
      * Get the item that represents the block type.
      *

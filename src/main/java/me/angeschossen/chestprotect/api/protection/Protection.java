@@ -7,17 +7,15 @@ import me.angeschossen.chestprotect.api.player.ProtectPlayer;
 import me.angeschossen.chestprotect.api.protection.enums.Type;
 import me.angeschossen.chestprotect.api.protection.flag.ProtectionFlag;
 import me.angeschossen.chestprotect.api.protection.hook.ProtectionHook;
+import me.angeschossen.chestprotect.api.protection.hook.ProtectionHookHolder;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
 import java.util.UUID;
 
-public interface Protection extends Nameable, RoleHolder {
+public interface Protection extends Nameable, RoleHolder, ProtectionHookHolder {
 
-    void setProtectionHook(@NotNull ProtectionHook protectionHook);
-
-    void removeProtectionHook();
 
     /**
      * Get the block x coordinate.
