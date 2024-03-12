@@ -63,4 +63,8 @@ public abstract class ProtectionHook {
     public abstract @Nullable RoleHolder getBlock(@NotNull Block block);
 
     public abstract boolean hasItem(@NotNull ItemStack itemStack);
+
+    public final void register() {
+        APIHandler.getInstance().getFactory().registerProtectionHook(this);
+    }
 }
