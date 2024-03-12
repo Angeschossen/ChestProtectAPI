@@ -10,5 +10,8 @@ public interface ProtectionHookHolder {
     void setProtectionHook(@NotNull ProtectionHook protectionHook);
 
     @Nullable
-    ProtectionHook getProtectionHook();
+    ProtectionHook.Data getProtectionHookData();
+
+    @Nullable
+    ProtectionHook getRegisteredProtectionHook();
 }

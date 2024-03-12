@@ -2,11 +2,9 @@ package me.angeschossen.chestprotect.api.protection;
 
 import com.github.angeschossen.pluginframework.api.trusted.RoleHolder;
 import com.github.angeschossen.pluginframework.api.trusted.group.Group;
-import me.angeschossen.chestprotect.api.exceptions.TrustedThroughGroupException;
 import me.angeschossen.chestprotect.api.player.ProtectPlayer;
 import me.angeschossen.chestprotect.api.protection.enums.Type;
 import me.angeschossen.chestprotect.api.protection.flag.ProtectionFlag;
-import me.angeschossen.chestprotect.api.protection.hook.ProtectionHook;
 import me.angeschossen.chestprotect.api.protection.hook.ProtectionHookHolder;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

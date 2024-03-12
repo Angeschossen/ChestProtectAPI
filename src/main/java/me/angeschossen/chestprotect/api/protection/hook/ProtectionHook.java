@@ -29,24 +29,28 @@ public abstract class ProtectionHook {
         return data;
     }
 
+    public final @NotNull String getId() {
+        return data.getId();
+    }
+
     public final @NotNull Plugin getPlugin() {
         return plugin;
     }
 
     public static final class Data {
-        private int id;
         private final @NotNull Timestamp timestamp;
+        private final @NotNull String id;
 
-        public Data(int id, @NotNull Timestamp timestamp) {
-            this.id = id;
+        public Data(@NotNull String id, @NotNull Timestamp timestamp) {
             this.timestamp = Checks.requireNonNull(timestamp, "timestamp");
-        }
-
-        public void setId(int id) {
             this.id = id;
         }
 
-        public int getId() {
+        public @Nullable ProtectionHook getRegisteredHook() {
+            return APIHandler.getInstance().getFactory().getProtectionHookById(id);
+        }
+
+        public @NotNull String getId() {
             return id;
         }
 
