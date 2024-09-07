@@ -1,6 +1,6 @@
 plugins {
     `java-library`
-    id("com.github.johnrengelman.shadow").version("7.1.2")
+    id("io.github.goooler.shadow").version("8.1.8")
     `maven-publish`
 }
 
@@ -52,19 +52,23 @@ tasks {
         configurations = listOf(project.configurations.shadow.get())
         relocate("com.github.angeschossen.pluginframework.api", "me.angeschossen.chestprotect.api.framework")
     }
-
-
 }
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+
 dependencies {
     shadow("com.github.Angeschossen:PluginFrameworkAPI:1.0.16")
-    compileOnly("org.spigotmc:spigot-api:1.19.3-R0.1-SNAPSHOT")
+    compileOnly("org.spigotmc:spigot-api:1.21.1-R0.1-SNAPSHOT")
     compileOnly("org.realityforge.org.jetbrains.annotations:org.jetbrains.annotations:1.7.0")
 }
 
 group = "com.github.angeschossen"
 version = "5.17.2"
 description = "ChestProtectAPI"
-java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 publishing {
     publications {
