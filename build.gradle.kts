@@ -1,3 +1,7 @@
+group = "com.github.angeschossen"
+version = "5.19.4"
+description = "ChestProtectAPI"
+
 plugins {
     `java-library`
     id("io.github.goooler.shadow").version("8.1.8")
@@ -37,6 +41,10 @@ tasks.withType<JavaCompile> {
     options.encoding = "UTF-8"
 }
 
+java {
+    toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+}
+
 tasks {
     java {
         withJavadocJar()
@@ -44,7 +52,6 @@ tasks {
 
     build {
         dependsOn(shadowJar)
-        //dependsOn(javadoc)
     }
 
     shadowJar {
@@ -54,21 +61,11 @@ tasks {
     }
 }
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
-}
-
-
 dependencies {
     shadow("com.github.Angeschossen:PluginFrameworkAPI:1.0.16")
     compileOnly("org.spigotmc:spigot-api:1.21.1-R0.1-SNAPSHOT")
     compileOnly("org.realityforge.org.jetbrains.annotations:org.jetbrains.annotations:1.7.0")
 }
-
-group = "com.github.angeschossen"
-version = "5.17.2"
-description = "ChestProtectAPI"
 
 publishing {
     publications {
